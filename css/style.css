@@ -1,0 +1,189 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --clr-icon : #000;
+    --clr-bg-figcaption : rgba(0, 0, 0, 0.7);
+    --clr-txt-figcaption : #fff;
+    --fs-figcaption : .8rem;
+    --fs-info : 0.875rem;
+    --fs-metadata : 0.75rem;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.style-scope {
+    width: 1.5rem;
+    fill: var(--clr-icon);
+}
+
+header {
+    z-index: 100;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1px;
+    background-color: #fff;
+}
+header .menu {
+    display: flex;
+    justify-content: space-between;
+    width: 170px;
+    margin-left: 18px;
+}
+header .menu img {
+    /* width: min(150px, 30vw); */
+    width: 120px;
+}
+
+main {
+    display: flex;
+    margin-top: 2.3rem;
+}
+
+aside {
+    /* min-width: min(3rem, 10vw); */
+    width: 60px;
+    position: fixed;
+    display: none;
+    left: 0;
+    top: 37px;
+}
+aside svg {
+    margin: 0 auto;
+}
+
+aside .label {
+    font-size: 0.6rem;
+    text-align: center;
+    display: none;
+}
+
+.container {
+    position: relative;
+    /* left: min(3rem, 10vw); */
+    /* width: calc(100% - min(3rem, 10vw)); */
+    left: 0px;
+    width: 100%;
+}
+.container nav {
+    position: fixed;
+    z-index: 99;
+    /* width: calc(100% - min(5rem, 10vw)); */
+    width: 100%;
+    padding: 0.5em;
+    /* height: 2rem; */
+    /* border: 1px solid black; */
+    /* left: min(3.8rem, 10vw); */
+    left: 0;
+    top: 33px;
+    background-color: #fff;
+}
+.container nav ul {
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+    align-items: center;
+}
+.container nav ul li{
+    list-style: none;
+    font-size: 1rem;
+    background-color: #333;
+    color: #fff;
+    padding: .3rem 1rem;
+    border-radius: 10px;
+}
+.dispNone {
+    display: none;
+}
+
+#liste {
+    position: absolute;
+    padding: .5rem;
+    top: 3rem;
+    left: 0;
+}
+
+.video {
+    margin: 0 auto 1rem auto;
+    max-width: 360px;
+}
+.video figure {
+    position: relative;
+    width: 100%;
+}
+.video figure img {
+    width: 100%;
+}
+.video figcaption {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    background-color: var(--clr-bg-figcaption);
+    color: var(--clr-txt-figcaption);
+    padding: 0.1rem .5rem;
+    border-radius: 3px;
+    font-size: var(--fs-figcaption);
+}
+.video .info {
+    display: flex;
+    gap: .5rem;
+    margin-bottom: .3rem;
+}
+.video .info .avatar {
+    border-radius: 50%;
+    max-width: 48px;
+    max-height: 48px;
+}
+.video .info .title {
+    font-size: var(--fs-info);
+    align-self: center;
+}
+.video .metaData {
+    font-size: var(--fs-metadata);
+    margin-left: 3.5rem;
+}
+.video .metaData .nbVues::before,
+.video .metaData .date::before {
+    content: "• ";
+}
+
+@media (min-width: 435px) {
+    #liste {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    aside {
+        display: block;
+        /* width: min(3rem, 10vw); */
+    }
+    aside svg {
+        margin-bottom: .6rem;
+    }
+    .container nav,
+    .container {
+        left: 60px;
+        width: calc(100% - 60px);
+    }
+}
+@media (min-width: 435px) and (max-width: 814px) {
+    .video {
+        max-width: 500px;
+    }
+}
+@media (min-width: 610px) {
+    aside svg {
+        margin-bottom: 0;
+    }
+    aside .label {
+        display: block;
+    }
+    .dispNone {
+        display: block;
+    }
+}
